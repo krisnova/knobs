@@ -19,7 +19,7 @@ Plugins can either be of type `source`, `output`, or `encoder` build around the 
 
 Servers speak the `rtmp` protocol as defined [here](https://wwwimages2.adobe.com/content/dam/acom/en/devnet/rtmp/pdf/rtmp_specification_1.0.pdf) and should listen by default on TCP port 1935.
 
-Servers should both consume and broadcast data on the same TCP port. The RTMP protocol is very effecient and does require very much overhead. Servers act as simple data transfer. 
+Servers should both consume and broadcast data on the same TCP port. The RTMP protocol is very efficient and does not require very much overhead. Servers act as simple data transfer. 
 
 **Clients**
 
@@ -42,7 +42,7 @@ We should also support rust because rust is cool.
 
 ## Philosophy
 
-Every client will be repsonsible for managing their own outbound stream. Every client gets 1 stream and can use tools like OBS studio to compose their stream.
+Every client will be responsible for managing their own outbound stream. Every client gets 1 stream and can use tools like OBS studio to compose their stream.
 
 Real time communications is out of scope for the initial proposal. Solve this component independently using POTs or other real time communications channels. We hope to support seamless realtime communication that takes full advantage of UDP in a future release but this will need to be designed.
 
