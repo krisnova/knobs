@@ -1,6 +1,8 @@
 # knobs
 Kubernetes Native Open Broadcasting Software
 
+_This is a work in progress. Pull requests accepted_
+
 ## Project components
 
 The `knobs` project will be composed of the following components that can be composed together for live production and recording on Kubernetes like systems.
