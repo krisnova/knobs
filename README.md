@@ -3,6 +3,18 @@ Kubernetes Native Open Broadcasting Software
 
 _This is a work in progress. Pull requests accepted_
 
+## Our Message
+
+     The world is different. Which means in-person events aren't going to be what they used to be. 
+
+     Right now there is a gap in the industry when it comes time to managing high quality digital events that are open, safe, fun, collaborative, and effective. Recordings and zoom calls will never be able to replace the energy of an in person event.
+
+     As an open source engineer, and Kubernetes expert I believe our community can come together to solve this problem in a healthy and powerful way. 
+
+     This project is our work on doing just that.
+
+        _Kris Nóva_
+
 ## Project components
 
 The `knobs` project will be composed of the following components that can be composed together for live production and recording on Kubernetes like systems.
