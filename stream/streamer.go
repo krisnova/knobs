@@ -1,0 +1,6 @@
+package stream
+
+
+interface Streamer {
+
+}
