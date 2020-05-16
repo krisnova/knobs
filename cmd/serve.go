@@ -18,6 +18,8 @@ package cmd
 import (
 	"os"
 
+	"github.com/kris-nova/knobs/stream"
+
 	"github.com/kris-nova/knobs/stream/rtmp"
 
 	"github.com/kris-nova/logger"
@@ -34,12 +36,14 @@ var ServeCmd = &cobra.Command{
 	},
 }
 
+var ServeOptons = &stream.StreamerOptions{}
+
 func Serve() {
 	// switch{} # cli args
 	// srt.New() ?
 	// http2.New() ?
 	// whatevs.New() ?
-	streamer := rtmp.New()
+	streamer := rtmp.New(ServeOptons)
 	err := streamer.Stream()
 	if err != nil {
 		logger.Critical("%+v", err.Error())

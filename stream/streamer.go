@@ -1,5 +1,9 @@
 package stream
 
+type StreamerOptions struct {
+	StreamListenAddr string
+}
+
 type Streamer interface {
 
 	// Stream is the main synchronous method

@@ -18,6 +18,8 @@ package cmd
 import (
 	"os"
 
+	"github.com/kris-nova/knobs/stream"
+
 	"github.com/kris-nova/knobs/stream/rtmp"
 	"github.com/kris-nova/logger"
 	"github.com/spf13/cobra"
@@ -37,12 +39,14 @@ func init() {
 	// Commands here
 }
 
+var ProxyOptions = &stream.StreamerOptions{}
+
 func Proxy() {
 	// switch{} # cli args
 	// srt.New() ?
 	// http2.New() ?
 	// whatevs.New() ?
-	streamer := rtmp.New()
+	streamer := rtmp.New(ProxyOptions)
 	err := streamer.Stream()
 	if err != nil {
 		logger.Critical("%+v", err.Error())

@@ -16,40 +16,31 @@ limitations under the License.
 package cmd
 
 import (
-  "fmt"
-  "github.com/kris-nova/logger"
-  "github.com/spf13/cobra"
-  "os"
+	"fmt"
+	"os"
+
+	"github.com/spf13/cobra"
 )
 
-
 var RootCmd = &cobra.Command{
-  Use:   "knobs",
-  Short: "A handy dandy media streaming server, client, and proxy",
-  Long: `Use this for stream things in Kubernetes`,
-  Run: func(cmd *cobra.Command, args []string) {
-
-
-
-    logger.Always("hi")
-    os.Exit(1)
-  },
+	Use:   "knobs",
+	Short: "A handy dandy media streaming server, client, and proxy",
+	Long:  `Use this for stream things in Kubernetes`,
+	//Run: func(cmd *cobra.Command, args []string) {
+	//},
 }
 
 func Execute() {
-  if err := RootCmd.Execute(); err != nil {
-    fmt.Println(err)
-    os.Exit(1)
-  }
+	if err := RootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }
 
 func init() {
-// Commands here
+	// Commands here
 
-  RootCmd.AddCommand(ServeCmd)
-  RootCmd.AddCommand(ProxyCmd)
+	RootCmd.AddCommand(ServeCmd)
+	RootCmd.AddCommand(ProxyCmd)
 
 }
-
-
-
