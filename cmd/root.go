@@ -45,6 +45,10 @@ func Execute() {
 
 func init() {
 // Commands here
+
+  RootCmd.AddCommand(ServeCmd)
+  RootCmd.AddCommand(ProxyCmd)
+
 }
 
 
