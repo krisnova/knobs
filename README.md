@@ -45,4 +45,3 @@ We should also support rust because rust is cool.
 Every client will be responsible for managing their own outbound stream. Every client gets 1 stream and can use tools like OBS studio to compose their stream.
 
 Real time communications is out of scope for the initial proposal. Solve this component independently using POTs or other real time communications channels. We hope to support seamless realtime communication that takes full advantage of UDP in a future release but this will need to be designed.
-
