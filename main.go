@@ -1,5 +1,5 @@
 /*
-Copyright © 2020 Kris Nóva <kris@nivenly.com>
+Copyright © 2020 The Knobs Authors
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,5 +18,5 @@ package main
 import "github.com/kris-nova/knobs/cmd"
 
 func main() {
-  cmd.Execute()
+	cmd.Execute()
 }
