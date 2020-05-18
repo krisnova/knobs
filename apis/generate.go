@@ -1,3 +1,5 @@
+// +build generate
+
 /*
 Copyright © 2020 The Knobs Authors
 
@@ -13,34 +15,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package cmd
+
+// Remove existing CRDs
+//go:generate rm -rf ../config/crd
+
+// Generate deepcopy methodsets and CRD manifests
+//go:generate go run -tags generate sigs.k8s.io/controller-tools/cmd/controller-gen object:headerFile=../hack/boilerplate.go.txt paths=./... crd:crdVersions="v1" output:artifacts:config=../config/crd
+
+package api
 
 import (
-	"fmt"
-	"os"
-
-	"github.com/spf13/cobra"
+	_ "sigs.k8s.io/controller-tools/cmd/controller-gen" //nolint:typecheck
 )
-
-var RootCmd = &cobra.Command{
-	Use:   "knobs",
-	Short: "A handy dandy media streaming server, client, and proxy",
-	Long:  `Use this for stream things in Kubernetes`,
-	//Run: func(cmd *cobra.Command, args []string) {
-	//},
-}
-
-func Execute() {
-	if err := RootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
-}
-
-func init() {
-	// Commands here
-
-	RootCmd.AddCommand(ServeCmd)
-	RootCmd.AddCommand(ProxyCmd)
-
-}
